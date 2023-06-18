@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="#{lt.code.academy.order.show.title}"></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+</head>
+<body>
+<div th:insert="~{fragments/header :: header}"></div>
+<div class="container my-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="container my-5">
+        <div class="col-md-12">
+
+          <dl class="row p-3 mb-2 bg-warning">
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.number}"></dt>
+            <dd class="col-sm-9" th:text="${order.orderNumber}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.date}"></dt>
+            <dd class="col-sm-9" th:text="${order.createdOn}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.nav.serviceOption}"></dt>
+            <dd class="col-sm-9" th:text="${order.serviceOptions[0].name}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.status}"></dt>
+            <dd class="col-sm-9" th:text="${order.statuses[0].name}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.price}"></dt>
+            <dd class="col-sm-9" th:text="${order.price}"></dd>
+          </dl>
+
+          <dl class="row p-3 mb-2 bg-danger text-white">
+            <dt class="col-sm-3" th:text="#{lt.code.academy.comment}"></dt>
+            <dd class="col-sm-9" th:text="${order.comment}"></dd>
+          </dl>
+
+          <dl class="row p-3 mb-2 bg-primary text-white">
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.customer}"></dt>
+            <dd class="col-sm-9" th:text="${order.name} + ' ' + ${order.surname}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.email}"></dt>
+            <dd class="col-sm-9" th:text="${order.email}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.phone}"></dt>
+            <dd class="col-sm-9" th:text="${order.phone}"></dd>
+          </dl>
+
+          <dl class="row p-3 mb-2 bg-light">
+            <dt class="col-sm-3" th:text="#{lt.code.academy.device.type}"></dt>
+            <dd class="col-sm-9" th:text="${order.deviceTypes[0].name}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.manufacturer}"></dt>
+            <dd class="col-sm-9" th:text="${order.manufacturers[0].name}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.model}"></dt>
+            <dd class="col-sm-9" th:text="${order.model}"></dd>
+
+            <dt class="col-sm-3" th:text="#{lt.code.academy.order.serial.number}"></dt>
+            <dd class="col-sm-9" th:text="${order.serialNumber}"></dd>
+          </dl>
+
+          <td><a th:href="@{/update/{id}(id=${order.id})}" class="bi bi-pencil-square me-4" style="font-size:48px"></a></td>
+          <td><a th:href="@{/removeOrder/{id}(id=${order.id})}" class="bi bi-trash3 me-4" style="font-size:48px;color:red;"></a></td>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div th:insert="~{fragments/footer :: footer}"></div>
+</body>
+
+</html>
