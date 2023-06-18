@@ -3,6 +3,7 @@ package lt.code.academy.repair_management_system.repository;
 import java.util.List;
 import java.util.UUID;
 
+import lt.code.academy.repair_management_system.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
