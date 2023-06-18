@@ -1,1 +1,3 @@
 # Repair_Management_System
+
+This application is built using Java Springboot, which is a popular framework for building web applications. The backend of the application uses RESTful architecture, which allows for easy communication between the client and server. The frontend of the application is built using Thymeleaf and Bootstrap, which are popular tools for creating responsive and visually appealing user interfaces.
